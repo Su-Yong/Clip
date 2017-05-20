@@ -1,0 +1,24 @@
+doctype html
+html(lang=ko)
+  head
+    title= Clip
+    link(rel='stylesheet' type='text/css' href='./dist/semantic.min.css')
+    script(src='https://code.jquery.com/jquery-3.1.1.min.js' integrity='sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=' crossorigin='anonymous')
+    script(src='./dist/semantic.min.js')
+  body(style='text-align: center; padding: 15%; padding-top: 5%; margin: 0px; height: 100%')
+    div.ui.container
+      h1.ui.header(style='font-size: 3em')
+        | Clip
+      h4.ui.divider
+      h2.ui.header
+        | Light game engine for node.js
+      canvas#canvas.ui.card(style='display: inline; width: 60%; padding-top: 30%')
+      h4.ui.horizontal.divider
+        | Help
+    div.ui.labeled.button
+      div.ui.white.button(onclick='window.open(\'http://syblog.kro.kr\')')
+        img.ui.avatar.image(src='https://avatars3.githubusercontent.com/u/13764936?v=3&u=d80ca40c94de65b881e2c081236e01e9e25da2ff&s=400')
+        | SuYong
+      a.ui.basic.white.left.pointing.label(onclick='window.open(\'http://sydev.kro.kr\')')
+        i.github.icon
+        | Github
