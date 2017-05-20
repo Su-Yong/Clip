@@ -44,8 +44,11 @@ Texture.prototype.setHeight = function (height) {
   return this
 }
 
-Texture.prototype.get = function (func) { // will support...
+Texture.prototype.get = function () {
   let image = new Image(this.size.getX(), this.size.getY())
   image.src = this.url
-  image.addEventListener('load', func)
+
+  return image
 }
+
+module.exports = Texture

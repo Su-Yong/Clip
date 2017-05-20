@@ -2,9 +2,10 @@ doctype html
 html(lang=ko)
   head
     title= Clip
-    link(rel='stylesheet' type='text/css' href='./dist/semantic.min.css')
+    link(rel='stylesheet' type='text/css' href='./semantic/dist/semantic.min.css')
     script(src='https://code.jquery.com/jquery-3.1.1.min.js' integrity='sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=' crossorigin='anonymous')
-    script(src='./dist/semantic.min.js')
+    script(src='./semantic/dist/semantic.min.js')
+    script(src='./dist/clip.js')
   body(style='text-align: center; padding: 15%; padding-top: 5%; margin: 0px; height: 100%')
     div.ui.container
       h1.ui.header(style='font-size: 3em')
@@ -12,7 +13,7 @@ html(lang=ko)
       h4.ui.divider
       h2.ui.header
         | Light game engine for node.js
-      canvas#canvas.ui.card(style='display: inline; width: 60%; padding-top: 30%')
+      canvas#canvas.ui.card(width='500px' height='500px' style='margin: 0px; display: inline; width: 60%; padding-top: 30%')
       h4.ui.horizontal.divider
         | Help
     div.ui.labeled.button

@@ -1,0 +1,14 @@
+{
+  "name": "Clip",
+  "version": "0.2.0",
+  "description": "Light game engine for node.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "dev": "webpack-dev-server"
+  },
+  "author": "SuYong",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "webpack": "^2.4.1"
+  }
+}

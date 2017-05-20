@@ -1,6 +1,6 @@
 let Vector2d = require('../Math/Vector.js')
 let Angle = require('../Math/Angle.js')
-
+let Util = require('../Util.js')
 let Component = function (id = (new Date()).getTime()) {
   this.id = id
 
@@ -69,9 +69,30 @@ Component.prototype.getHeight = function () {
 }
 
 Component.prototype.setTexture = function (texture) {
-  this.texture = texture
+  this.texture = texture.get()
 
   return this
+}
+
+Component.prototype.getID = function () {
+  return this.id
+}
+
+Component.prototype.render = function (canvas) {
+  canvas.save();
+  canvas.translate(this.coord.getX() + this.size.getX() * 0.5, this.coord.getY() + this.size.getY() * 0.5);
+  canvas.rotate(this.angle.getRadian());
+  canvas.translate(-this.coord.getX() - this.size.getX() * 0.5, -this.coord.getY() - this.size.getY() * 0.5);
+  canvas.drawImage(this.texture, this.coord.getX(), this.coord.getY(), this.size.getX(), this.size.getY());
+
+  if(Util.isDebug) {
+    canvas.strokeStyle = "#FF0000";
+    canvas.lineWidth = 2;
+    canvas.strokeRect(this.coord.getX(), this.coord.getY(), this.size.getX(), this.size.getY());
+    console.log('ID: ' + this.getID() + ' coordX: ' + this.coord.getX() + ' coordY: ' + this.coord.getY() + ' sizeX: ' + this.size.getX() + ' sizeY: ' + this.size.getY())
+  }
+
+  canvas.restore();
 }
 
 module.exports = Component

@@ -1,4 +1,6 @@
-let Util = {}
+let Util = {
+  isDebug: true
+}
 
 Util.clone = object => {
   if (object == null || typeof object != 'object')

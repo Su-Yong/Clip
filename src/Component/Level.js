@@ -32,4 +32,8 @@ Level.prototype.removeComponent = function (v) {
   this.backup = Util.clone(this.component)
 }
 
+Level.prototype.getComponents = function () {
+  return this.components
+}
+
 module.exports = Level
